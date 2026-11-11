@@ -94,7 +94,6 @@ main {
     min-height: 75vh;
 }
 
-/* Setiap halaman disembunyikan kecuali halaman aktif */
 .page {
     display: none;
     min-height: 75vh;
@@ -111,7 +110,7 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== BERANDA (rata tengah) ===== */
+/* BERANDA */
 .hero {
     background: linear-gradient(120deg, #f8e4c3, #fff8ed);
 }
@@ -160,7 +159,7 @@ h1 span {
     border-radius: 22px;
 }
 
-/* ===== HEADING HALAMAN LAIN ===== */
+/* HEADING */
 .heading {
     text-align: center;
     margin-bottom: 35px;
@@ -175,7 +174,7 @@ h1 span {
     color: #796957;
 }
 
-/* ===== PRODUK ===== */
+/* PRODUK */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -220,7 +219,7 @@ h1 span {
     width: 100%;
 }
 
-/* ===== KONTAK ===== */
+/* KONTAK */
 .contact-card {
     background: white;
     max-width: 650px;
@@ -235,7 +234,7 @@ h1 span {
     margin: 14px 0;
 }
 
-/* ===== KERANJANG ===== */
+/* KERANJANG */
 .cart-list {
     max-width: 800px;
     margin: auto;
@@ -336,13 +335,15 @@ footer p {
         <button class="active" data-page="beranda">Beranda</button>
         <button data-page="produk">Produk</button>
         <button data-page="kontak">Kontak</button>
-        <button data-page="keranjang">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+        <button data-page="keranjang">
+            🛒 Keranjang (<span id="cart-count">0</span>)
+        </button>
     </nav>
 </header>
 
 <main>
 
-    <!-- HALAMAN 1: BERANDA -->
+    <!-- HALAMAN BERANDA -->
     <section class="page hero active" id="beranda">
 
         <div class="hero-content">
@@ -360,9 +361,10 @@ footer p {
             </p>
         </div>
 
+        <!-- GAMBAR UTAMA -->
         <img
             class="hero-image"
-            src="./images/lakutobe-utama.png.jpg"
+            src="lakutobe-utama.png.jpg"
             alt="Produk Lakutobe Nusantara"
         >
 
@@ -372,18 +374,21 @@ footer p {
 
     </section>
 
-    <!-- HALAMAN 2: PRODUK -->
+    <!-- HALAMAN PRODUK -->
     <section class="page" id="produk">
+
         <div class="heading">
             <h1>Produk Kami</h1>
             <p>Pilih produk favoritmu dan tambahkan ke keranjang.</p>
         </div>
 
         <div class="product-grid" id="product-list"></div>
+
     </section>
 
-    <!-- HALAMAN 3: KONTAK -->
+    <!-- HALAMAN KONTAK -->
     <section class="page" id="kontak">
+
         <div class="heading">
             <h1>Hubungi Kami</h1>
             <p>Kami siap membantu pesanan dan pertanyaanmu.</p>
@@ -391,6 +396,7 @@ footer p {
 
         <div class="contact-card">
             <h2>🌾 Lakutobe_Nusantara</h2>
+
             <p>📍 Timor Tengah Utara, Nusa Tenggara Timur</p>
             <p>📱 WhatsApp: +62 812-4671-6853</p>
             <p>🕒 Jam pelayanan: Sesuaikan dengan jam operasional</p>
@@ -399,10 +405,12 @@ footer p {
                 Hubungi melalui WhatsApp
             </button>
         </div>
+
     </section>
 
-    <!-- HALAMAN 4: KERANJANG -->
+    <!-- HALAMAN KERANJANG -->
     <section class="page" id="keranjang">
+
         <div class="heading">
             <h1>Keranjang Belanja 🛒</h1>
             <p>Periksa produk dan jumlah pesananmu.</p>
@@ -416,6 +424,7 @@ footer p {
         </div>
 
         <div style="text-align:center">
+
             <button class="button" onclick="showPage('produk')">
                 ← Kembali ke Produk
             </button>
@@ -427,7 +436,9 @@ footer p {
             >
                 Pesan melalui WhatsApp
             </button>
+
         </div>
+
     </section>
 
 </main>
@@ -439,37 +450,45 @@ footer p {
 </footer>
 
 <script>
+
 // Nomor WhatsApp usaha
 const NOMOR_WA = "6281246716853";
 
-// Daftar produk. Pastikan nama file gambar sama persis dengan di folder images.
+// DAFTAR PRODUK
+// Nama file harus sama persis dengan nama di GitHub.
 const products = [
-  {
-    id: 1,
-    name: "Laku Tobe Original",
-    description: "Perpaduan kelapa dan singkong dengan rasa gurih alami.",
-    price: 7000,
-    image: "images/Lakutobe-original.jpg"
-  },
-  {
-    id: 2,
-    name: "Laku Tobe Pandan",
-    description: "Aroma pandan yang harum.",
-    price: 7000,
-    image: "images/Lakutobe-Pandan.jpg"
-  },
-  {
-    id: 3,
-    name: "Laku Tobe Gula Merah",
-    description: "Manisnya pas dengan rasa yang khas.",
-    price: 7000,
-    image: "images/lakutobe-gula-merah.jpg"
-  }
+
+    {
+        id: 1,
+        name: "Laku Tobe Original",
+        description: "Perpaduan kelapa dan singkong dengan rasa gurih alami.",
+        price: 7000,
+        image: "Lakutobe-original.jpg"
+    },
+
+    {
+        id: 2,
+        name: "Laku Tobe Pandan",
+        description: "Aroma pandan yang harum.",
+        price: 7000,
+        image: "lakutobe-Pandan.jpg"
+    },
+
+    {
+        id: 3,
+        name: "Laku Tobe Gula Merah",
+        description: "Manisnya pas dengan rasa yang khas.",
+        price: 7000,
+        image: "lakutobe-gula-merah.jpg"
+    }
+
 ];
+
 let cart = [];
 
 // PINDAH HALAMAN
 function showPage(pageId) {
+
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
     });
@@ -477,36 +496,46 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add("active");
 
     document.querySelectorAll("nav button[data-page]").forEach(button => {
+
         button.classList.toggle(
             "active",
             button.dataset.page === pageId
         );
+
     });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Hubungkan menu navigasi dengan halaman
+// HUBUNGKAN MENU NAVIGASI
 document.querySelectorAll("nav button[data-page]").forEach(button => {
+
     button.addEventListener("click", () => {
         showPage(button.dataset.page);
     });
+
 });
 
-// Format harga rupiah
+// FORMAT HARGA RUPIAH
 function rupiah(number) {
+
     return new Intl.NumberFormat("id-ID", {
         style: "currency",
         currency: "IDR",
         maximumFractionDigits: 0
     }).format(number);
+
 }
 
-// Tampilkan produk
+// TAMPILKAN PRODUK
 function renderProducts() {
+
     document.getElementById("product-list").innerHTML =
+
         products.map(product => `
+
             <article class="product-card">
+
                 <img
                     class="product-image"
                     src="${product.image}"
@@ -514,9 +543,14 @@ function renderProducts() {
                 >
 
                 <div class="product-info">
+
                     <h3>${product.name}</h3>
+
                     <p>${product.description}</p>
-                    <div class="price">${rupiah(product.price)}</div>
+
+                    <div class="price">
+                        ${rupiah(product.price)}
+                    </div>
 
                     <button
                         class="button"
@@ -524,104 +558,162 @@ function renderProducts() {
                     >
                         + Tambah ke Keranjang
                     </button>
+
                 </div>
+
             </article>
+
         `).join("");
+
 }
 
-// Tambahkan produk ke keranjang
+// TAMBAHKAN PRODUK KE KERANJANG
 function addToCart(id) {
+
     const product = products.find(p => p.id === id);
+
     const item = cart.find(p => p.id === id);
 
     if (item) {
+
         item.qty++;
+
     } else {
+
         cart.push({ ...product, qty: 1 });
+
     }
 
     renderCart();
+
     alert(product.name + " berhasil ditambahkan!");
+
 }
 
-// Ubah jumlah produk
+// UBAH JUMLAH PRODUK
 function changeQty(id, amount) {
+
     const item = cart.find(p => p.id === id);
+
     if (!item) return;
 
     item.qty += amount;
 
     if (item.qty <= 0) {
+
         cart = cart.filter(p => p.id !== id);
+
     }
 
     renderCart();
+
 }
 
-// Tampilkan keranjang
+// TAMPILKAN KERANJANG
 function renderCart() {
+
     const container = document.getElementById("cart-items");
 
-    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const count = cart.reduce(
+        (sum, item) => sum + item.qty, 0
+    );
+
     const total = cart.reduce(
         (sum, item) => sum + item.price * item.qty, 0
     );
 
     document.getElementById("cart-count").textContent = count;
+
     document.getElementById("cart-total").textContent = rupiah(total);
 
     if (cart.length === 0) {
+
         container.innerHTML = `
+
             <div class="empty">
+
                 <h2>🛍️ Keranjang Masih Kosong</h2>
+
                 <p>Silakan pilih produk terlebih dahulu.</p>
+
                 <br>
+
                 <button class="button" onclick="showPage('produk')">
                     Pilih Produk
                 </button>
+
             </div>
+
         `;
+
         return;
+
     }
 
     container.innerHTML = cart.map(item => `
+
         <div class="cart-row">
+
             <div>
+
                 <strong>${item.name}</strong>
+
                 <p>${rupiah(item.price)} per produk</p>
 
                 <div class="quantity">
-                    <button onclick="changeQty(${item.id}, -1)">−</button>
+
+                    <button onclick="changeQty(${item.id}, -1)">
+                        −
+                    </button>
+
                     <span>${item.qty}</span>
-                    <button onclick="changeQty(${item.id}, 1)">+</button>
+
+                    <button onclick="changeQty(${item.id}, 1)">
+                        +
+                    </button>
+
                 </div>
+
             </div>
 
-            <strong>${rupiah(item.price * item.qty)}</strong>
+            <strong>
+                ${rupiah(item.price * item.qty)}
+            </strong>
+
         </div>
+
     `).join("");
+
 }
 
-// Buka WhatsApp
+// BUKA WHATSAPP
 function openWhatsApp(message) {
+
     const url = "https://wa.me/" + NOMOR_WA +
         "?text=" + encodeURIComponent(message);
 
     window.open(url, "_blank", "noopener,noreferrer");
+
 }
 
-// Hubungi usaha
+// HUBUNGI USAHA
 function contactUs() {
+
     openWhatsApp(
         "Halo Lakutobe_Nusantara, saya ingin bertanya tentang produk."
     );
+
 }
 
-// Checkout
+// CHECKOUT
 function checkout() {
+
     if (cart.length === 0) {
+
         alert("Keranjang masih kosong!");
+
         return;
+
     }
 
     const total = cart.reduce(
@@ -632,24 +724,30 @@ function checkout() {
         "Halo Lakutobe_Nusantara, saya ingin memesan:\n\n";
 
     cart.forEach(item => {
+
         message += "- " + item.name +
             " x " + item.qty +
             " = " + rupiah(item.price * item.qty) + "\n";
+
     });
 
     message += "\nTotal: " + rupiah(total);
+
     message += "\nMohon informasi pembayaran dan pengiriman.";
 
     openWhatsApp(message);
+
 }
 
-// Tahun otomatis
+// TAHUN OTOMATIS
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
-// Jalankan website
+// JALANKAN WEBSITE
 renderProducts();
+
 renderCart();
+
 </script>
 
 </body>
